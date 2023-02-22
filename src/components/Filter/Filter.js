@@ -1,6 +1,4 @@
 export const Filter = ({ filterValue, filterChange }) => {
-  //   console.log(filterValue);
-  //   console.log(filterChange);
   return (
     <div>
       <p>Find contacts by name</p>
