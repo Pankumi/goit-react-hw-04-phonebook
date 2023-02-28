@@ -9,14 +9,8 @@ import { Filter } from './Filter/Filter';
 import contactsData from '../data/default-contacts.json';
 
 export const App = () => {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState( JSON.parse(localStorage.getItem('contacts')) ?? contactsData );
   const [filter, setFilter] = useState('');
-
-  useEffect(() => {
-    const initial =
-      JSON.parse(localStorage.getItem('contacts')) ?? contactsData;
-    setContacts(initial);
-  }, []);
 
   useEffect(() => {
     if (contacts.length === 0) return;
